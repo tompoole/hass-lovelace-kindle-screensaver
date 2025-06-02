@@ -307,9 +307,10 @@ function convertImageToKindleCompatiblePngAsync(
       .gamma(pageConfig.removeGamma ? 1.0 / 2.2 : 1.0)
       .modulate(100, 100 * pageConfig.saturation)
       .contrast(pageConfig.contrast)
-      .dither(pageConfig.dither)
+      .dither(true)
       .rotate("white", pageConfig.rotation)
       .type(pageConfig.colorMode)
+      .colors(2)
       .level(pageConfig.blackLevel, pageConfig.whiteLevel)
       .bitdepth(pageConfig.grayscaleDepth);
 
